@@ -25,7 +25,7 @@ namespace Sample.Api
                         config.Sources.Clear();
                         
                         config.AddEnvironmentVariables()
-                        .AddJsonFile("serilog.json", optional: true, reloadOnChange: true)
+                        .AddJsonFile("consul.json", optional: true, reloadOnChange: true)
                         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json",
                                 optional: true, reloadOnChange: true);
