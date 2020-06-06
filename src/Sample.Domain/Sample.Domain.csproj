@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Sample.Common\Sample.Common.csproj" />
+		<ProjectReference Include="..\Sample.Infrastructure\Sample.Infrastructure.csproj" />
+		<ProjectReference Include="..\Sample.Persistance\Sample.Persistance.csproj" />
+	</ItemGroup>
+</Project>

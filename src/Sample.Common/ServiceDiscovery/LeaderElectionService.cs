@@ -6,21 +6,20 @@ using Consul;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-namespace Sample.Api.HostedServices
+namespace Sample.Common.ServiceDiscovery
 {
     public class LeaderElectionService : IHostedService, IDisposable
     {
         private Timer _timer;
         private readonly ILogger _logger;
-
-        readonly string _key;
-        IDistributedLock _distributedLock;
-        Task _sessionRenewTask;
-        CancellationTokenSource _sessionRenewCts;
+        private readonly string _key;
+        private IDistributedLock _distributedLock;
+        private Task _sessionRenewTask;
+        private CancellationTokenSource _sessionRenewCts;
 
         public LeaderElectionService(ILogger logger)
         {
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentException(nameof(logger));
             _key = "org/dept/project/service"; // TODO: Get from config
         }
 
