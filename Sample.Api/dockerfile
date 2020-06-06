@@ -1,0 +1,23 @@
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine AS base
+WORKDIR /app
+EXPOSE 80
+RUN mkdir /logs
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS restore
+WORKDIR /build
+
+COPY *.csproj ./src/
+RUN dotnet restore /build/src
+
+FROM restore AS source
+WORKDIR /build
+ADD . ./src/
+
+FROM source AS publish
+WORKDIR /build/src
+RUN dotnet publish -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "Sample.Api.dll"]

@@ -1,0 +1,9 @@
+{
+  "Consul": {
+    "address": "http://localhost:8500",
+    "serviceName": "consul-sample-api",
+    "serviceId": "b39d1d0d-8e29-4aa6-9b3d-3e4ae77ce108",
+    "serviceAddress": "localhost:5000",
+    "serviceTags": [ "api", "external", "1.0.0" ]
+  }
+}
