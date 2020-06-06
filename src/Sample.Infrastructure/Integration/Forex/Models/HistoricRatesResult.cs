@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Sample.Infrastructure.Integration.Forex
+namespace Sample.Infrastructure.Integration.Forex.Models
 {
-    public class HistroricRatesResult
+    public class HistoricRatesResult
     {
 
         [JsonProperty("rates")]
-        public Dictionary<string, RatesData> HistroricRates { get; set; }
+        public Dictionary<string, RatesData> HistoricRates { get; set; }
 
         [JsonProperty("start_at")]
         public string StartAt { get; set; }

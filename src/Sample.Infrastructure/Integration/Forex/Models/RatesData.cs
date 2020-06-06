@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Sample.Infrastructure.Integration.Forex
+namespace Sample.Infrastructure.Integration.Forex.Models
 {
     public class RatesData
     {

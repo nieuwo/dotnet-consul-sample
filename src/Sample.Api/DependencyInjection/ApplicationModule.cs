@@ -21,7 +21,7 @@ namespace Sample.Api.DependencyInjection
     {
         protected override void Load(ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterType<NotifierService>().As<INotifierService>();
+            containerBuilder.RegisterType<RatesService>().As<IRatesService>();
         }
     }
 
