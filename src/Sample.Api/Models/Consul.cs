@@ -1,4 +1,4 @@
-namespace Sample.Common.Models
+namespace Sample.Api.Models
 {
     public class Consul
     {

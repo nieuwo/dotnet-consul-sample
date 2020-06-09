@@ -1,12 +1,12 @@
+using Consul;
+using Microsoft.Extensions.Hosting;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Consul;
-using Microsoft.Extensions.Hosting;
-using Serilog;
 
-namespace Sample.Common.ServiceDiscovery
+namespace Sample.Api.ServiceDiscovery
 {
     public class LeaderElectionService : IHostedService, IDisposable
     {

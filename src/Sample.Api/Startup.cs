@@ -1,5 +1,4 @@
-﻿using System;
-using Autofac;
+﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,9 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sample.Api.DependencyInjection;
 using Sample.Api.Extensions;
-using Sample.Common.Extensions;
-using Sample.Common.ServiceDiscovery;
-using Sample.Infrastructure.Integration.Forex;
+using Sample.Api.ServiceDiscovery;
 using Serilog;
 
 namespace Sample.Api
@@ -35,17 +32,13 @@ namespace Sample.Api
             services.AddHealthChecks();
 
             services.AddCustomSwagger();
-
-            services.AddCustomHttpClient();
-
+            
             services.AddAutofac();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new ApplicationModule());
-            builder.RegisterModule(new DomainModule());
-            builder.RegisterModule(new InfrastructureModule());
         }
 
 

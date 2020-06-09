@@ -8,7 +8,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Consul" Version="1.6.1" />
 		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
 		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
 		<PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
@@ -16,12 +18,6 @@
 		<PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="5.4.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Sample.Common\Sample.Common.csproj" />
-
-	  <ProjectReference Include="..\Sample.Domain\Sample.Domain.csproj" />
 	</ItemGroup>
 
 </Project>

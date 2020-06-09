@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Http.Features;
 using Serilog;
 
-namespace Sample.Common.ServiceDiscovery
+namespace Sample.Api.ServiceDiscovery
 {
     public class ConsulRegistrarService: IConsulRegistrarService
     {
@@ -20,7 +20,7 @@ namespace Sample.Common.ServiceDiscovery
             _logger = logger ?? throw new ArgumentException(nameof(logger));
             _consulClient = consulClient ?? throw new ArgumentException(nameof(consulClient)); ;
         }
-        public async Task StartAsync(Models.Consul consulConfig,IFeatureCollection features,CancellationToken cancellationToken)
+        public async Task StartAsync(Api.Models.Consul consulConfig,IFeatureCollection features,CancellationToken cancellationToken)
         {
             _cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             var addresses = features.Get<IServerAddressesFeature>();
